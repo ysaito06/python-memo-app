@@ -1,0 +1,22 @@
+<h1>Reading Memo</h1>
+
+<p><a href="{% url 'create' %}">新規作成</a></p>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">title</th>
+      <th scope="col">writer</th>
+      <th scope="col">date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for reading in readings %}
+    <tr>
+      <td>{{ reading.title }}</td>
+      <td>{{ reading.writer }}</td>
+      <td>{{ reading.date }}</td>
+      <td><a href="{% url 'detail' reading.pk %}">メモ</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
